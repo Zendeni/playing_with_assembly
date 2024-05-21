@@ -6,12 +6,14 @@ section .data
 
 section .text
 _start:
-    mov rax, 1
-    mov rdi, 1
-    mov rsi, message
-    mov rdx, length
-    syscall
+    ; Write message to stdout
+    mov rax, 1          ; syscall: sys_write
+    mov rdi, 1          ; file descriptor: stdout
+    mov rsi, message    ; pointer to message
+    mov rdx, length     ; message length
+    syscall             ; invoke syscall
 
-    mov rax, 60
-    mov rdi, 0
-    syscall
+    ; Exit program
+    mov rax, 60         ; syscall: sys_exit
+    mov rdi, 0          ; exit status: 0
+    syscall             ; invoke syscall
