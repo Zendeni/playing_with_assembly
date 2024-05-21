@@ -9,6 +9,10 @@ ld -o helloWorld helloWorld.o
 
 
 ## Or use this bash script
+usage
+```
+./assembler.sh helloWorld.s
+```
 ```
 #!/bin/bash
 
